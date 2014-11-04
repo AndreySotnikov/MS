@@ -1,0 +1,24 @@
+\documentclass[a4paper,12pt,oneside,titlepage]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[OT1]{fontenc}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\ifx\pdfoutput\undefined
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\newcommand{\grad}{\mathop{\mathrm{grad}}\nolimits}
+\else
+\usepackage[pdftex]{graphicx}
+
+% Title Page
+\title{Лекции по математической статистике. 5 семестр. МОиАИС.}
+\author{Якунцев Никита, Андрей Сотников, Никита Хатеев}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\include{./contents/1_lection}
+%\include{./contents/second/6_bilet}
+\end{document}
