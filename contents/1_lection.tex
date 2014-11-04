@@ -16,10 +16,54 @@
 \textbf{Доказательство для дискретной случайной величины: }
 
 $ MX=\sum \limits_{i=1}^{n}{x_i p_i} $ отбросим первые $k$ слагаемых: $ \sum \limits_{i=1}^{k}{x_i p_i} \ge 0 $; $ \sum \limits_{i=k+1}^{n}{x_i p_i} \le MX $ 
+
 заменим $x_i$ на $A$ :
-$ \sum \limits_{i=k+1}^{n}{A_i p_i} \le MX \Rightarrow \sum \limits_{i=k+1}^{n}{p_i} \le \frac{MX}{A} \Rightarrow P(X>A) \le \frac{MX}{A} $
-$P(x \le A) \ge 1 - \frac{MX}{A}$
+
+$ \sum \limits_{i=k+1}^{n}{A_i p_i} \le MX \Rightarrow \sum \limits_{i=k+1}^{n}{p_i} \le \frac{MX}{A} \Rightarrow P(X>A) \le \frac{MX}{A} $\
+
+Следствие: $P(x \le A) \ge 1 - \frac{MX}{A}$
 
 \begin{center}
     \textbf{Неравенство Чебышева}
 \end{center} 
+
+Для любой случайной величины, имеющей конечной математическое ожидания и дисперсию справедливо, что $P(|X-MX|>\varepsilon) \le \frac{DX}{\varepsilon^2}$
+
+\textbf{Доказательство: }
+
+$Y=(X-MX)^2;A=\varepsilon^2$ запишем неравенство Маркова $P((X-MX)^2 > \varepsilon) \le \frac{M(X-MX)^2}{\varepsilon^2} = \frac{DX}{\varepsilon^2} \Rightarrow$ извлекаем корень и получаем неравенство.
+
+Следствие: $P(|X-MX| \le \varepsilon) \ge 1 - \frac{DX}{\varepsilon^2}$
+
+\begin{center}
+    \textbf{Теорема Чебышева}
+\end{center} 
+
+Если случайные величины $X_1,X_2 ... X_n$ независимые и имеют конечные дисперсии, ограниченные одной и той же константой $C$, то при неограниченном увеличении $n$ среднее арифметическое этих случайных величин сходится по вероятности 
+к среднему арифметическому математических ожиданий.
+$$\lim \limits_{x \to \infty} {P(|\frac{X_1+X_2+ ... +X_n}{n} - \frac{MX_1+MX_2+ ...+MX_n}{n}| < \varepsilon)=1}; \forall \varepsilon > 0$$
+$ \frac{X_1+X_2+ ... +X_n}{n} \stackrel{P}{\xrightarrow[n\to\infty]{}} \frac{MX_1+MX_2+ ...+MX_n}{n} $ сходится по вероятности.
+
+\textbf{Доказательство: }
+
+$X=\frac{X_1+X_2+ ... +X_n}{n}; MX=\frac{MX_1+MX_2+ ... +MX_n}{n} \\
+DX=\frac{1}{n^2}(DX_1+DX_2+ ... +DX_n) \le \frac{nC}{n^2} = \frac{C}{n} \\
+P(|X-MX| \le \varepsilon) \ge 1 - \frac{DX}{\varepsilon^2} \ge 1 - \frac{C}{n \varepsilon^2}$ \\
+$\lim \limits_{x \to \infty} {P(|\frac{X_1+X_2+ ... +X_n}{n} - \frac{MX_1+MX_2+ ...+MX_n}{n}| < \varepsilon) \ge 1-\frac{C}{n \varepsilon^2}}$, т.к $1-\frac{C}{n \varepsilon^2} \to 1$, то \\
+$\lim \limits_{x \to \infty} {P(|\frac{X_1+X_2+ ... +X_n}{n} - \frac{MX_1+MX_2+ ...+MX_n}{n}| < \varepsilon)=1}$
+
+\textbf {Следствия}
+
+\begin{enumerate}
+  \item Если все случайные величины $X_i$ имеют одно и тоже математическое ожидание $NX_i=a$ \\ 
+    $\lim \limits_{x \to \infty} {P(|\frac{X_1+X_2+ ... +X_n}{n} - a| < \varepsilon)=1}$
+  \item \textbf {Теорема Бернулли} \\
+    Частость события в $n$ повторных независимых испытаниях, в каждом из которых она может произойти с вероятностью $P$ при неограниченном увеличении числа
+    испытаний стремится к вероятности этого события\\
+    \textbf{Доказательство: }\\
+    $\lim \limits_{x \to \infty} {P(|\frac{X_1+X_2+ ... +X_n}{n} - \frac{MX_1+MX_2+ ...+MX_n}{n}| < \varepsilon)=1}$ \\
+    $\frac{X_1+X_2+ ... +X_n}{n}$ - частость; $\frac{MX_1+MX_2+ ...+MX_n}{n}$ - вероятность \\
+    $x_i=1$, если событие проявилось в $i$-ом испытании \\
+    $x_i=0$, иначе \\
+    Частость: $\frac{m}{n}$, где $m$- кол-во встречаний; $n$ - общее кол-во
+\end{enumerate}
